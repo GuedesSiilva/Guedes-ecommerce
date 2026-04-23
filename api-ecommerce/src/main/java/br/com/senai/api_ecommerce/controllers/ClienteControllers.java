@@ -20,7 +20,7 @@ public class ClienteControllers {
 
     @PostMapping
     @Transactional
-    public void  cadastrarCliente(@RequestBody @Valid DadosCadastroCategoria dados){
+    public void  cadastrarCliente(@RequestBody @Valid DadosCadastroCliente dados){
     clienteRepository.save(new Cliente(dados));
     }
 
