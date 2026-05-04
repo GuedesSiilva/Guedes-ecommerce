@@ -1,12 +1,9 @@
 package br.com.senai.api_ecommerce.endereco;
 
 import jakarta.persistence.Embeddable;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Embeddable
 @Getter
@@ -21,7 +18,7 @@ public class Endereco {
     private String cidade;
     private String uf;
 
-    public Endereco(DadosEndereco dados) {
+    public Endereco(DadosCadastroEndereco dados) {
         this.logradouro = dados.logradouro();
         this.bairro = dados.bairro();
         this.cidade = dados.cidade();
@@ -31,7 +28,7 @@ public class Endereco {
         this.uf = dados.uf();
     }
 
-    public void atualizarEndereco(@Valid DadosEndereco dados) {
+    public void atualizarEndereco(DadosAtualizarEndereco dados) {
         if(dados.logradouro() != null && !dados.logradouro().isBlank()){
             this.logradouro = dados.logradouro();
         }
